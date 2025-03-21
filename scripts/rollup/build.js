@@ -94,9 +94,9 @@ const syncFBSourcePath = argv['sync-fbsource'];
 const syncWWWPath = argv['sync-www'];
 
 const closureOptions = {
-  compilation_level: 'SIMPLE',
+  compilation_level: 'WHITESPACE_ONLY',
   language_in: 'ECMASCRIPT_2015',
-  language_out: 'ECMASCRIPT5_STRICT',
+  language_out: 'ECMASCRIPT_NEXT',
   env: 'CUSTOM',
   warning_level: 'QUIET',
   apply_input_source_maps: false,
@@ -104,6 +104,7 @@ const closureOptions = {
   process_common_js_modules: false,
   rewrite_polyfills: false,
   inject_libraries: false,
+  formatting: 'PRETTY_PRINT',
 };
 
 // Non-ES2015 stuff applied before closure compiler.
