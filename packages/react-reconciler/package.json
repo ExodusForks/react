@@ -14,9 +14,9 @@
     "constants.js",
     "index.js",
     "reflection.js",
-    "cjs/"
+    "cjs/react.production.min.js"
   ],
-  "main": "index.js",
+  "main": "cjs/react.production.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/react.git",
