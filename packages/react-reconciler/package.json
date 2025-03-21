@@ -10,13 +10,9 @@
   "license": "MIT",
   "files": [
     "LICENSE",
-    "README.md",
-    "constants.js",
-    "index.js",
-    "reflection.js",
-    "cjs/react.production.min.js"
+    "README.md"
   ],
-  "main": "cjs/react.production.min.js",
+  "main": "cjs/react-reconciler.production.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/react.git",
