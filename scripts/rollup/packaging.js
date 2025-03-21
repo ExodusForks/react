@@ -223,7 +223,7 @@ async function prepareNpmPackage(name) {
   const tgzName = (
     await asyncExecuteCommand(`npm pack build/node_modules/${name}`)
   ).trim();
-  await asyncRimRaf(`build/node_modules/${name}`);
+  // await asyncRimRaf(`build/node_modules/${name}`);
   await asyncExtractTar(getTarOptions(tgzName, name));
   unlinkSync(tgzName);
 }
