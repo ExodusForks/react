@@ -12,7 +12,7 @@ import assign from 'shared/assign';
 export function resolveDefaultProps(Component: any, baseProps: Object): Object {
   if (Component && Component.defaultProps) {
     // Resolve default props. Taken from ReactElement
-    const props = assign({}, baseProps);
+    const props = assign(Object.create(null), baseProps);
     const defaultProps = Component.defaultProps;
     for (const propName in defaultProps) {
       if (props[propName] === undefined) {
