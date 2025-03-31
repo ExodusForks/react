@@ -10,9 +10,10 @@ This is an experimental package for creating custom React renderers.
 
 ```sh
 yarn build # grab a coffee, i haven't figured out how to build individual packages yet
-yarn build react-reconciler --type=NODE_PROD
+#yarn build react-reconciler --type=NODE_PROD
 mkdir -p packages/react-reconciler/cjs
 cp build/node_modules/react-reconciler/cjs/react-reconciler.production.min.js packages/react-reconciler/cjs
+cp build/node_modules/react-reconciler/cjs/react-reconciler-constants.production.min.js packages/react-reconciler/constants.js
 cd packages/react-reconciler
 npm publish
 ```
