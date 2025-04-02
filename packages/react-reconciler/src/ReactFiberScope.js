@@ -31,7 +31,7 @@ function getSuspenseFallbackChild(fiber: Fiber): Fiber | null {
   return ((((fiber.child: any): Fiber).sibling: any): Fiber).child;
 }
 
-const emptyObject = {};
+const emptyObject = Object.create(null);
 
 function collectScopedNodes(
   node: Fiber,

@@ -21,10 +21,10 @@ export function resolveDefaultPropsOnNonClassComponent(
   }
   if (Component && Component.defaultProps) {
     // Resolve default props. Taken from ReactElement
-    const props = assign({}, baseProps);
+    const props = assign(Object.create(null), baseProps);
     const defaultProps = Component.defaultProps;
     for (const propName in defaultProps) {
-      if (props[propName] === undefined) {
+      if (props[propName] === undefined && !(propName in {})) {
         props[propName] = defaultProps[propName];
       }
     }

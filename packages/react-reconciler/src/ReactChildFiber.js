@@ -119,9 +119,9 @@ if (__DEV__) {
    * object keys are not valid. This allows us to keep track of children between
    * updates.
    */
-  ownerHasKeyUseWarning = ({}: {[string]: boolean});
-  ownerHasFunctionTypeWarning = ({}: {[string]: boolean});
-  ownerHasSymbolTypeWarning = ({}: {[string]: boolean});
+  ownerHasKeyUseWarning = (Object.create(null): {[string]: boolean});
+  ownerHasFunctionTypeWarning = (Object.create(null): {[string]: boolean});
+  ownerHasSymbolTypeWarning = (Object.create(null): {[string]: boolean});
 
   warnForMissingKey = (
     returnFiber: Fiber,
