@@ -42,6 +42,7 @@ import {isCompatibleFamilyForHotReloading} from './ReactFiberHotReloading.old';
 import {StrictLegacyMode} from './ReactTypeOfMode';
 import {getIsHydrating} from './ReactFiberHydrationContext.old';
 import {pushTreeFork} from './ReactFiberTreeContext.old';
+import assign from 'shared/assign';
 
 let didWarnAboutMaps;
 let didWarnAboutGenerators;
@@ -60,8 +61,8 @@ if (__DEV__) {
    * object keys are not valid. This allows us to keep track of children between
    * updates.
    */
-  ownerHasKeyUseWarning = {};
-  ownerHasFunctionTypeWarning = {};
+  ownerHasKeyUseWarning = Object.create(null);
+  ownerHasFunctionTypeWarning = Object.create(null);
 
   warnForMissingKey = (child: mixed, returnFiber: Fiber) => {
     if (child === null || typeof child !== 'object') {
@@ -192,12 +193,12 @@ function coerceRef(
         let refs = resolvedInst.refs;
         if (refs === emptyRefsObject) {
           // This is a lazy pooled frozen object, so we need to initialize.
-          refs = resolvedInst.refs = {};
+          refs = resolvedInst.refs = Object.create(null);
         }
         if (value === null) {
           delete refs[stringRef];
         } else {
-          refs[stringRef] = value;
+          assign(refs, stringRef, value);
         }
       };
       ref._stringRef = stringRef;

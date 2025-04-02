@@ -15,7 +15,7 @@ export function resolveDefaultProps(Component: any, baseProps: Object): Object {
     const props = assign(Object.create(null), baseProps);
     const defaultProps = Component.defaultProps;
     for (const propName in defaultProps) {
-      if (props[propName] === undefined) {
+      if (props[propName] === undefined && !(propName in {})) {
         props[propName] = defaultProps[propName];
       }
     }

@@ -24,7 +24,7 @@ if (__DEV__) {
   warnedAboutMissingGetChildContext = {};
 }
 
-export const emptyContextObject = {};
+export const emptyContextObject = Object.create(null);
 if (__DEV__) {
   Object.freeze(emptyContextObject);
 }
@@ -97,8 +97,9 @@ function getMaskedContext(
       return instance.__reactInternalMemoizedMaskedChildContext;
     }
 
-    const context = {};
+    const context = Object.create(null);
     for (const key in contextTypes) {
+      if (key in {}) continue;
       context[key] = unmaskedContext[key];
     }
 
