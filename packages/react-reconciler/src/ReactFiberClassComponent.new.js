@@ -187,7 +187,7 @@ function applyDerivedStateFromProps(
   const memoizedState =
     partialState === null || partialState === undefined
       ? prevState
-      : assign({}, prevState, partialState);
+      : assign(Object.create(null), prevState, partialState);
   workInProgress.memoizedState = memoizedState;
 
   // Once the update queue is empty, persist the derived state onto the

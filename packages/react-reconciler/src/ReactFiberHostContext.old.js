@@ -15,7 +15,7 @@ import {getChildHostContext, getRootHostContext} from './ReactFiberHostConfig';
 import {createCursor, push, pop} from './ReactFiberStack.old';
 
 declare class NoContextT {}
-const NO_CONTEXT: NoContextT = ({}: any);
+const NO_CONTEXT: NoContextT = ({ __proto__: null }: any);
 
 const contextStackCursor: StackCursor<HostContext | NoContextT> = createCursor(
   NO_CONTEXT,

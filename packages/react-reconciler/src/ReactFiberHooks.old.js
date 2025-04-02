@@ -1932,7 +1932,7 @@ function mountDeferredValue<T>(value: T): T {
   const [prevValue, setValue] = mountState(value);
   mountEffect(() => {
     const prevTransition = ReactCurrentBatchConfig.transition;
-    ReactCurrentBatchConfig.transition = {};
+    ReactCurrentBatchConfig.transition = Object.create(null);
     try {
       setValue(value);
     } finally {
@@ -1946,7 +1946,7 @@ function updateDeferredValue<T>(value: T): T {
   const [prevValue, setValue] = updateState(value);
   updateEffect(() => {
     const prevTransition = ReactCurrentBatchConfig.transition;
-    ReactCurrentBatchConfig.transition = {};
+    ReactCurrentBatchConfig.transition = Object.create(null);
     try {
       setValue(value);
     } finally {
@@ -1960,7 +1960,7 @@ function rerenderDeferredValue<T>(value: T): T {
   const [prevValue, setValue] = rerenderState(value);
   updateEffect(() => {
     const prevTransition = ReactCurrentBatchConfig.transition;
-    ReactCurrentBatchConfig.transition = {};
+    ReactCurrentBatchConfig.transition = Object.create(null);
     try {
       setValue(value);
     } finally {
@@ -1979,7 +1979,7 @@ function startTransition(setPending, callback, options) {
   setPending(true);
 
   const prevTransition = ReactCurrentBatchConfig.transition;
-  ReactCurrentBatchConfig.transition = {};
+  ReactCurrentBatchConfig.transition = Object.create(null);
   const currentTransition = ReactCurrentBatchConfig.transition;
 
   if (enableTransitionTracing) {

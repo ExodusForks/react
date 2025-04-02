@@ -444,7 +444,7 @@ function getStateFromUpdate<State>(
         return prevState;
       }
       // Merge the partial state and the previous state.
-      return assign({}, prevState, partialState);
+      return assign(Object.create(null), prevState, partialState);
     }
     case ForceUpdate: {
       hasForceUpdate = true;

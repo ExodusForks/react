@@ -7,6 +7,16 @@
  * @flow
  */
 
-const assign = Object.assign;
+const assign = (obj, key, value) => {
+  const descriptor = {
+    __proto__: null,
+    value,
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  };
+  Object.defineProperty(obj, key, descriptor);
+  return obj;
+};
 
 export default assign;
