@@ -19,16 +19,6 @@ export const assignProperty = (obj, key, value) => {
   return obj;
 };
 
-const assign = (target, ...sources) => {
-  sources.forEach(source => {
-    for (const key in source) {
-      if (Object.hasOwn(source, key)) {
-        assignProperty(target, key, source[key]);
-      }
-    }
-  });
-
-  return target;
-};
+const assign = Object.assign;
 
 export default assign;
