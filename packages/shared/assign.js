@@ -7,7 +7,7 @@
  * @flow
  */
 
-const assign = (obj, key, value) => {
+export const assignProperty = (obj, key, value) => {
   const descriptor = {
     __proto__: null,
     value,
@@ -17,6 +17,18 @@ const assign = (obj, key, value) => {
   };
   Object.defineProperty(obj, key, descriptor);
   return obj;
+};
+
+const assign = (target, ...sources) => {
+  sources.forEach(source => {
+    for (const key in source) {
+      if (Object.hasOwn(source, key)) {
+        assignProperty(target, key, source[key]);
+      }
+    }
+  });
+
+  return target;
 };
 
 export default assign;

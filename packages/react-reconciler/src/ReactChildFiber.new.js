@@ -42,7 +42,7 @@ import {isCompatibleFamilyForHotReloading} from './ReactFiberHotReloading.new';
 import {StrictLegacyMode} from './ReactTypeOfMode';
 import {getIsHydrating} from './ReactFiberHydrationContext.new';
 import {pushTreeFork} from './ReactFiberTreeContext.new';
-import assign from 'shared/assign';
+import {assignProperty} from 'shared/assign';
 
 let didWarnAboutMaps;
 let didWarnAboutGenerators;
@@ -198,7 +198,7 @@ function coerceRef(
         if (value === null) {
           delete refs[stringRef];
         } else {
-          assign(refs, stringRef, value);
+          assignProperty(refs, stringRef, value);
         }
       };
       ref._stringRef = stringRef;
