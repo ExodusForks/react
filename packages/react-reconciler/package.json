@@ -13,7 +13,7 @@
     "README.md",
     "constants.js"
   ],
-  "main": "cjs/react-reconciler.production.min.js",
+  "main": "cjs/react-reconciler.production.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/react.git",

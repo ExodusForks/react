@@ -15,8 +15,8 @@ yarn
 yarn build # grab a coffee, i haven't figured out how to build individual packages yet
 #yarn build react-reconciler --type=NODE_PROD
 mkdir -p packages/react-reconciler/cjs
-cp build/node_modules/react-reconciler/cjs/react-reconciler.production.min.js packages/react-reconciler/cjs
-cp build/node_modules/react-reconciler/cjs/react-reconciler-constants.production.min.js packages/react-reconciler/constants.js
+cp build/oss-stable/react-reconciler/cjs/react-reconciler.production.js packages/react-reconciler/cjs
+cp build/oss-stable/react-reconciler/cjs/react-reconciler-constants.production.js packages/react-reconciler/constants.js
 cd packages/react-reconciler
 # re-add the @exodus scope to the package name in package.json
 npm publish
