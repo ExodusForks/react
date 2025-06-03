@@ -1,5 +1,5 @@
 {
-  "name": "@exodus/react-reconciler",
+  "name": "react-reconciler",
   "description": "React package for creating custom renderers.",
   "version": "0.31.0",
   "keywords": [
