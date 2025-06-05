@@ -12,11 +12,9 @@ This is an experimental package for creating custom React renderers.
 # remove the @exodus scope from the package name in package.json
 rm -rf **/node_modules
 yarn
-yarn build # grab a coffee, i haven't figured out how to build individual packages yet
-#yarn build react-reconciler --type=NODE_PROD
+yarn build react-reconciler
 mkdir -p packages/react-reconciler/cjs
-cp build/oss-stable/react-reconciler/cjs/react-reconciler.production.js packages/react-reconciler/cjs
-cp build/oss-stable/react-reconciler/cjs/react-reconciler-constants.production.js packages/react-reconciler/constants.js
+cp -r build/oss-stable/react-reconciler/cjs/ packages/react-reconciler/cjs
 cd packages/react-reconciler
 # re-add the @exodus scope to the package name in package.json
 npm publish
